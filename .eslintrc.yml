@@ -1,0 +1,9 @@
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: 'module'
+
+env:
+  es2020: true
+  browser: true
+
+extends: 'htmlacademy/vanilla'

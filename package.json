@@ -1,0 +1,15 @@
+{
+  "name": "code-and-magic",
+  "version": "27.0.0",
+  "description": "Учебный проект «Код и Магия»",
+  "scripts": {
+    "lint": "eslint js/",
+    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\""
+  },
+  "author": "htmlacademy",
+  "devDependencies": {
+    "browser-sync": "2.27.10",
+    "eslint": "8.15.0",
+    "eslint-config-htmlacademy": "6.0.0"
+  }
+}

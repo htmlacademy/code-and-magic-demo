@@ -1,0 +1,16 @@
+{
+  "name": "code-and-magic",
+  "version": "23.0.0",
+  "description": "Учебный проект «Код и Магия»",
+  "scripts": {
+    "eslint": "eslint js/",
+    "test": "npm run eslint",
+    "start": "browser-sync start --server --no-ui --files \"js/**/*.js\""
+  },
+  "author": "htmlacademy",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "eslint": "^7.28.0",
+    "eslint-config-htmlacademy": "^4.0.2"
+  }
+}

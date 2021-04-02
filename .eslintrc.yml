@@ -1,0 +1,12 @@
+parserOptions:
+  ecmaVersion: 2022
+  sourceType: 'module'
+
+env:
+  es2022: true
+  browser: true
+
+extends: 'htmlacademy/vanilla'
+
+globals:
+  Pristine: readonly

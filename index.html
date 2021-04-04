@@ -62,7 +62,7 @@
   </header>
 
   <div class="overlay setup hidden">
-    <form class="setup-wizard-form">
+    <form class="setup-wizard-form" method="post" enctype="multipart/form-data" action="https://27.javascript.pages.academy/code-and-magick" autocomplete="off">
 
       <div class="setup-title">
         <div class="setup-user">
@@ -70,8 +70,11 @@
             <img class="setup-user-pic" src="img/user-1.jpg" alt="User avatar">
             <input type="file" name="avatar">
           </div>
-          <label>
-            <input type="text" class="setup-user-name" value="Синий Пендальф">
+          <label class="setup-wizard-form__element">
+            <input type="text" class="setup-user-name" value="Синий Пендальф" name="username" required minlength="2" maxlength="25"
+            data-pristine-required-message="Обязательное поле"
+            data-pristine-minlength-message="Минимальная длина 2 символа"
+            data-pristine-maxlength-message="Максимальная длина 25 символов">
           </label>
         </div>
 
@@ -171,6 +174,7 @@
     </div>
   </template>
 
+  <script src="pristine/pristine.js"></script>
   <script src="js/main.js" type="module"></script>
 
 </body>

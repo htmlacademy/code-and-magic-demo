@@ -50,3 +50,20 @@ coatColorElement.addEventListener('click', (evt) => {
   evt.target.style.fill = randomColor;
   coatColorInput.value = randomColor;
 });
+
+const pristine = new Pristine(wizardForm, {
+  classTo: 'setup-wizard-form__element',
+  errorTextParent: 'setup-wizard-form__element',
+  errorTextClass: 'setup-wizard-form__error-text',
+});
+
+wizardForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+
+  const isValid = pristine.validate();
+  if (isValid) {
+    console.log('Можно отправлять');
+  } else {
+    console.log('Форма невалидна');
+  }
+});

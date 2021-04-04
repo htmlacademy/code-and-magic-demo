@@ -1,3 +1,3 @@
 import './setup.js';
-import './popup.js';
+import './wizard-setup-modal.js';
 

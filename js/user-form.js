@@ -46,17 +46,23 @@ fireballColorElement.addEventListener('click', (evt) => {
   fireballColorInput.value = randomColor;
 });
 
-eyesColorElement.addEventListener('click', (evt) => {
-  const randomColor = getRandomArrayElement(Color.EYES);
-  evt.target.style.fill = randomColor;
-  eyesColorInput.value = randomColor;
-});
+const setEyesClick = (cb) => {
+  eyesColorElement.addEventListener('click', (evt) => {
+    const randomColor = getRandomArrayElement(Color.EYES);
+    evt.target.style.fill = randomColor;
+    eyesColorInput.value = randomColor;
+    cb();
+  });
+};
 
-coatColorElement.addEventListener('click', (evt) => {
-  const randomColor = getRandomArrayElement(Color.COATS);
-  evt.target.style.fill = randomColor;
-  coatColorInput.value = randomColor;
-});
+const setCoatClick = (cb) => {
+  coatColorElement.addEventListener('click', (evt) => {
+    const randomColor = getRandomArrayElement(Color.COATS);
+    evt.target.style.fill = randomColor;
+    coatColorInput.value = randomColor;
+    cb();
+  });
+};
 
 const pristine = new Pristine(wizardForm, {
   classTo: 'setup-wizard-form__element',
@@ -93,4 +99,4 @@ const setUserFormSubmit = (onSuccess) => {
   });
 };
 
-export {setUserFormSubmit};
+export {setUserFormSubmit, setEyesClick, setCoatClick};

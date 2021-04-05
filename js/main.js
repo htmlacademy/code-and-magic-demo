@@ -4,6 +4,7 @@ import {setUserFormSubmit, setEyesClick, setCoatClick} from './user-form.js';
 import {renderSimilarList} from './similar-list.js';
 import {getData} from './api.js';
 import {showAlert, debounce} from './util.js';
+import './avatar.js';
 
 const RERENDER_DELAY = 500;
 

@@ -69,25 +69,31 @@ if (fireballColorElement) {
   });
 }
 
-if (eyesColorElement) {
-  eyesColorElement.addEventListener('click', (evt) => {
-    const randomColor = getRandomArrayElement(Colors.EYES);
-    evt.target.style.fill = randomColor;
-    if (eyesColorInput) {
-      eyesColorInput.value = randomColor;
-    }
-  });
-}
+const setEyesClick = (cb) => {
+  if (eyesColorElement) {
+    eyesColorElement.addEventListener('click', (evt) => {
+      const randomColor = getRandomArrayElement(Colors.EYES);
+      evt.target.style.fill = randomColor;
+      if (eyesColorInput) {
+        eyesColorInput.value = randomColor;
+      }
+      cb();
+    });
+  }
+};
 
-if (coatColorElement) {
-  coatColorElement.addEventListener('click', (evt) => {
-    const randomColor = getRandomArrayElement(Colors.COAT);
-    evt.target.style.fill = randomColor;
-    if (coatColorInput) {
-      coatColorInput.value = randomColor;
-    }
-  });
-}
+const setCoatClick = (cb) => {
+  if (coatColorElement) {
+    coatColorElement.addEventListener('click', (evt) => {
+      const randomColor = getRandomArrayElement(Colors.COAT);
+      evt.target.style.fill = randomColor;
+      if (coatColorInput) {
+        coatColorInput.value = randomColor;
+      }
+      cb();
+    });
+  }
+};
 
 const setWizardSetupFormSubmit = (sendData, onSuccess) => {
   if (wizardSetupForm) {
@@ -103,4 +109,4 @@ const setWizardSetupFormSubmit = (sendData, onSuccess) => {
   }
 };
 
-export {setWizardSetupFormSubmit};
+export {setWizardSetupFormSubmit, setEyesClick, setCoatClick};

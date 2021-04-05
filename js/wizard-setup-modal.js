@@ -1,5 +1,4 @@
 import {isEscEvent, isEnterEvent} from './util.js';
-import {renderSimilarList, clearSimilarList} from './similar-wizards-list.js';
 
 const wizardSetupElement = document.querySelector('.setup');
 const wizardSetupOpenElement = document.querySelector('.setup-open');
@@ -26,7 +25,6 @@ const onWizardSetupCloseEnterKeydown = (evt) => {
 function openWizardSetup () {
   if (wizardSetupElement) {
     wizardSetupElement.classList.remove('hidden');
-    renderSimilarList();
 
     document.addEventListener('keydown', onWizardSetupEscKeydown);
 
@@ -40,7 +38,6 @@ function openWizardSetup () {
 function closeWizardSetup () {
   if (wizardSetupElement) {
     wizardSetupElement.classList.add('hidden');
-    clearSimilarList();
 
     document.removeEventListener('keydown', onWizardSetupEscKeydown);
 
@@ -62,3 +59,5 @@ if (wizardSetupOpenElement) {
     }
   });
 }
+
+export {closeWizardSetup};

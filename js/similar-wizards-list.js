@@ -1,17 +1,9 @@
-import {createWizards} from './data.js';
-
 const similarWizardsElement = document.querySelector('.setup-similar');
-
-if (similarWizardsElement) {
-  similarWizardsElement.classList.remove('hidden');
-}
 
 const similarWizardsListElement = similarWizardsElement.querySelector('.setup-similar-list');
 const similarWizardTemplateElement = document.querySelector('#similar-wizard-template');
 
-const similarWizards = createWizards();
-
-const renderSimilarList = () => {
+const renderSimilarList = (similarWizards) => {
   if (similarWizardsListElement && similarWizardTemplateElement) {
     const similarWizardTemplate = similarWizardTemplateElement
       .content
@@ -28,6 +20,7 @@ const renderSimilarList = () => {
     });
 
     similarWizardsListElement.appendChild(similarListFragment);
+    similarWizardsElement.classList.remove('hidden');
   }
 };
 

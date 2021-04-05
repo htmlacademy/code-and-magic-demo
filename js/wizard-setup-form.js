@@ -1,4 +1,4 @@
-import {getRandomArrayElement} from './util.js';
+import {showAlert, getRandomArrayElement} from './util.js';
 
 const MIN_NAME_LENGTH = 2;
 const MAX_NAME_LENGTH = 25;
@@ -88,3 +88,19 @@ if (coatColorElement) {
     }
   });
 }
+
+const setWizardSetupFormSubmit = (sendData, onSuccess) => {
+  if (wizardSetupForm) {
+    wizardSetupForm.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+
+      sendData(
+        () => onSuccess(),
+        () => showAlert('Не удалось отправить форму. Попробуйте ещё раз'),
+        new FormData(evt.target),
+      );
+    });
+  }
+};
+
+export {setWizardSetupFormSubmit};

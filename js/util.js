@@ -1,7 +1,25 @@
+// Функции getRandomInteger и debounce взяты из интернета
+// Источник - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore
+
 const ALERT_SHOW_TIME = 5000;
 
-// Функция из интернета по генерации случайного числа из диапазона
-// Источник - https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_random
+const debounce = (func, wait, immediate) => {
+  let timeout;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      timeout = null;
+      if (!immediate) {
+        func.apply(context, args);
+      }
+    }, wait);
+    if (immediate && !timeout) {
+      func.apply(context, args);
+    }
+  };
+};
 
 export const getRandomInteger = (a = 0, b = 1) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -37,4 +55,4 @@ const showAlert = (message) => {
   }, ALERT_SHOW_TIME);
 };
 
-export {getRandomArrayElement, isEscEvent, isEnterEvent, showAlert};
+export {getRandomArrayElement, isEscEvent, isEnterEvent, showAlert, debounce};
